@@ -2,8 +2,8 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>INFODESIGN — Портфолио дизайнера инфографики</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>INFODESIGN — Дизайнер инфографики</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
     }
 
     img{
-      max-width:100%;
+      width:100%;
       display:block;
     }
 
@@ -43,8 +43,8 @@
       top:0;
       width:100%;
       background:rgba(255,255,255,0.85);
-      backdrop-filter:blur(16px);
-      border-bottom:1px solid rgba(0,0,0,0.05);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(0,0,0,0.06);
       z-index:1000;
     }
 
@@ -90,7 +90,7 @@
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.1fr 1fr;
+      grid-template-columns:1.05fr 1fr;
       gap:80px;
       align-items:center;
     }
@@ -106,18 +106,18 @@
     }
 
     h1{
-      font-size:78px;
+      font-size:76px;
       line-height:1.02;
       letter-spacing:-4px;
-      margin-bottom:30px;
+      margin-bottom:28px;
       font-weight:800;
     }
 
     .hero p{
       font-size:20px;
       color:rgba(0,0,0,0.6);
-      max-width:560px;
       margin-bottom:40px;
+      max-width:560px;
     }
 
     .buttons{
@@ -224,10 +224,9 @@
     .step,
     .case-card{
       border:1px solid rgba(0,0,0,0.08);
-      border-radius:30px;
-      transition:0.35s ease;
+      border-radius:28px;
       background:#fff;
-      padding:20px;
+      transition:0.35s ease;
     }
 
     .advantage{
@@ -260,25 +259,28 @@
 
     .service-card,
     .pricing-card,
-    .case-card,
     .review,
     .step{
       padding:34px;
     }
 
+    .case-card{
+      padding:20px;
+    }
+
     .service-card:hover,
-    .case-card:hover,
     .pricing-card:hover,
     .review:hover,
     .step:hover,
-    .advantage:hover{
+    .advantage:hover,
+    .case-card:hover{
       transform:translateY(-6px);
       box-shadow:0 20px 40px rgba(0,0,0,0.06);
     }
 
     .service-card h3,
-    .case-card h3,
-    .pricing-card h3{
+    .pricing-card h3,
+    .case-card h3{
       font-size:26px;
       margin-bottom:18px;
     }
@@ -319,8 +321,8 @@
 
     .price{
       font-size:54px;
-      margin-bottom:26px;
       font-weight:700;
+      margin-bottom:26px;
     }
 
     .pricing-card ul{
@@ -351,7 +353,7 @@
       color:#fff;
     }
 
-    .steps .step-number{
+    .step-number{
       color:#6b4dff;
       margin-bottom:24px;
       font-size:14px;
@@ -454,16 +456,11 @@
       }
 
       .gallery-item{
-        height:320px;
-        border-radius: 24px;
-        overflow: hidden;
-        background: #f3f3f3;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-        transition: 0.4s ease;
+        height:280px;
       }
 
       .case-image{
-        height:420px;
+        height:360px;
       }
     }
 
@@ -509,7 +506,8 @@
       </h1>
 
       <p>
-        Профессиональный дизайн инфографики для маркетплейсов, бизнеса и соцсетей.
+        Профессиональный дизайн инфографики
+        для маркетплейсов, бизнеса и соцсетей.
       </p>
 
       <div class="buttons">
@@ -718,6 +716,51 @@
   </div>
 
 </section>
+
+<section class="gray" id="pricing">
+
+  <div class="container">
+
+    <div class="section-label">
+      Стоимость
+    </div>
+
+    <h2>
+      Прозрачные тарифы
+    </h2>
+
+  </div>
+
+</section>
+
+<footer id="contacts">
+
+  <div class="container footer-grid">
+
+    <div>
+
+      <div class="section-label">
+        Контакты
+      </div>
+
+      <h2>
+        Готов обсудить ваш проект
+      </h2>
+
+    </div>
+
+    <div>
+
+      <a href="#">Telegram</a>
+      <a href="#">WhatsApp</a>
+      <a href="#">Email</a>
+      <a href="#">Behance</a>
+
+    </div>
+
+  </div>
+
+</footer>
 
 </body>
 </html>

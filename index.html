@@ -1,765 +1,967 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>INFODESIGN — Дизайнер инфографики</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:'Inter',sans-serif;
-      background:#ffffff;
-      color:#111111;
-      line-height:1.6;
-    }
-
-    img{
-      width:100%;
-      display:block;
-    }
-
-    .container{
-      width:100%;
-      max-width:1280px;
-      margin:0 auto;
-      padding:0 24px;
-    }
-
-    header{
-      position:fixed;
-      top:0;
-      width:100%;
-      background:rgba(255,255,255,0.85);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(0,0,0,0.06);
-      z-index:1000;
-    }
-
-    .navbar{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:22px 0;
-    }
-
-    .logo{
-      font-size:22px;
-      font-weight:800;
-      letter-spacing:-1px;
-    }
-
-    nav{
-      display:flex;
-      gap:34px;
-    }
-
-    nav a{
-      text-decoration:none;
-      color:rgba(0,0,0,0.65);
-      font-size:15px;
-      transition:0.3s ease;
-    }
-
-    nav a:hover{
-      color:#000;
-    }
-
-    section{
-      padding:120px 0;
-    }
-
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      padding-top:120px;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.05fr 1fr;
-      gap:80px;
-      align-items:center;
-    }
-
-    .badge{
-      display:inline-block;
-      background:#f0ebff;
-      color:#6b4dff;
-      padding:10px 18px;
-      border-radius:999px;
-      font-size:14px;
-      margin-bottom:28px;
-    }
-
-    h1{
-      font-size:76px;
-      line-height:1.02;
-      letter-spacing:-4px;
-      margin-bottom:28px;
-      font-weight:800;
-    }
-
-    .hero p{
-      font-size:20px;
-      color:rgba(0,0,0,0.6);
-      margin-bottom:40px;
-      max-width:560px;
-    }
-
-    .buttons{
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
-    }
-
-    .btn-primary,
-    .btn-secondary{
-      padding:16px 30px;
-      border-radius:999px;
-      text-decoration:none;
-      transition:0.35s ease;
-      font-weight:500;
-    }
-
-    .btn-primary{
-      background:#111;
-      color:#fff;
-    }
-
-    .btn-primary:hover{
-      transform:translateY(-3px);
-    }
-
-    .btn-secondary{
-      border:1px solid rgba(0,0,0,0.12);
-      color:#111;
-    }
-
-    .btn-secondary:hover{
-      background:#111;
-      color:#fff;
-    }
-
-    .hero-gallery{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:18px;
-      align-items:start;
-    }
-
-    .gallery-item{
-      height:320px;
-      border-radius:24px;
-      overflow:hidden;
-      background:#f3f3f3;
-      box-shadow:0 20px 40px rgba(0,0,0,0.08);
-      transition:0.4s ease;
-    }
-
-    .gallery-item:hover{
-      transform:translateY(-8px);
-    }
-
-    .gallery-item img,
-    .case-image img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-
-    .section-label{
-      color:#6b4dff;
-      text-transform:uppercase;
-      letter-spacing:4px;
-      font-size:13px;
-      margin-bottom:18px;
-    }
-
-    h2{
-      font-size:58px;
-      line-height:1.1;
-      letter-spacing:-2px;
-      margin-bottom:30px;
-    }
-
-    .about-grid,
-    .footer-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:80px;
-    }
-
-    .about-text{
-      font-size:18px;
-      color:rgba(0,0,0,0.65);
-      margin-bottom:40px;
-    }
-
-    .advantages{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:20px;
-    }
-
-    .advantage,
-    .service-card,
-    .pricing-card,
-    .review,
-    .faq-item,
-    .step,
-    .case-card{
-      border:1px solid rgba(0,0,0,0.08);
-      border-radius:28px;
-      background:#fff;
-      transition:0.35s ease;
-    }
-
-    .advantage{
-      padding:28px;
-      font-weight:500;
-    }
-
-    .services,
-    .cases,
-    .pricing,
-    .steps,
-    .reviews{
-      display:grid;
-      gap:24px;
-    }
-
-    .services,
-    .cases,
-    .pricing{
-      grid-template-columns:repeat(3,1fr);
-    }
-
-    .steps{
-      grid-template-columns:repeat(4,1fr);
-    }
-
-    .reviews{
-      grid-template-columns:repeat(4,1fr);
-    }
-
-    .service-card,
-    .pricing-card,
-    .review,
-    .step{
-      padding:34px;
-    }
-
-    .case-card{
-      padding:20px;
-    }
-
-    .service-card:hover,
-    .pricing-card:hover,
-    .review:hover,
-    .step:hover,
-    .advantage:hover,
-    .case-card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 20px 40px rgba(0,0,0,0.06);
-    }
-
-    .service-card h3,
-    .pricing-card h3,
-    .case-card h3{
-      font-size:26px;
-      margin-bottom:18px;
-    }
-
-    .service-card p,
-    .review p,
-    .faq-item p,
-    .case-card p{
-      color:rgba(0,0,0,0.6);
-    }
-
-    .service-meta{
-      margin-top:28px;
-      font-size:14px;
-      color:rgba(0,0,0,0.7);
-    }
-
-    .gray{
-      background:#f7f7f9;
-    }
-
-    .case-image{
-      height:420px;
-      border-radius:20px;
-      overflow:hidden;
-      margin-bottom:20px;
-    }
-
-    .featured{
-      background:#111;
-      color:#fff;
-    }
-
-    .featured p,
-    .featured li{
-      color:rgba(255,255,255,0.75);
-    }
-
-    .price{
-      font-size:54px;
-      font-weight:700;
-      margin-bottom:26px;
-    }
-
-    .pricing-card ul{
-      list-style:none;
-      margin-bottom:30px;
-    }
-
-    .pricing-card li{
-      margin-bottom:12px;
-    }
-
-    .pricing-card button{
-      width:100%;
-      padding:16px;
-      border-radius:999px;
-      border:none;
-      cursor:pointer;
-      font-weight:600;
-    }
-
-    .featured button{
-      background:#fff;
-      color:#111;
-    }
-
-    .pricing-card:not(.featured) button{
-      background:#111;
-      color:#fff;
-    }
-
-    .step-number{
-      color:#6b4dff;
-      margin-bottom:24px;
-      font-size:14px;
-    }
-
-    .avatar{
-      width:56px;
-      height:56px;
-      border-radius:50%;
-      background:#ece9ff;
-      margin-bottom:18px;
-    }
-
-    .stars{
-      color:#ffb400;
-      margin-bottom:14px;
-    }
-
-    .faq{
-      max-width:900px;
-      margin:0 auto;
-      display:flex;
-      flex-direction:column;
-      gap:18px;
-    }
-
-    .faq-item{
-      padding:30px;
-    }
-
-    .faq-item h4{
-      margin-bottom:14px;
-      font-size:22px;
-    }
-
-    footer a{
-      display:block;
-      margin-bottom:18px;
-      text-decoration:none;
-      color:rgba(0,0,0,0.75);
-      font-size:20px;
-      transition:0.3s ease;
-    }
-
-    footer a:hover{
-      color:#6b4dff;
-    }
-
-    @media(max-width:1100px){
-
-      .hero-grid,
-      .about-grid,
-      .footer-grid,
-      .services,
-      .cases,
-      .pricing,
-      .steps,
-      .reviews{
-        grid-template-columns:1fr;
-      }
-
-      h1{
-        font-size:54px;
-      }
-
-      h2{
-        font-size:42px;
-      }
-
-      .hero-gallery{
-        margin-top:30px;
-      }
-    }
-
-    @media(max-width:768px){
-
-      nav{
-        display:none;
-      }
-
-      .advantages{
-        grid-template-columns:1fr;
-      }
-
-      .hero-gallery{
-        grid-template-columns:1fr;
-      }
-
-      h1{
-        font-size:42px;
-        letter-spacing:-2px;
-      }
-
-      h2{
-        font-size:34px;
-      }
-
-      section{
-        padding:90px 0;
-      }
-
-      .gallery-item{
-        height:280px;
-      }
-
-      .case-image{
-        height:360px;
-      }
-    }
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INFODESIGN — Дизайнер инфографики</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#ffffff;
+  color:#111;
+  line-height:1.6;
+}
+
+img{
+  width:100%;
+  display:block;
+}
+
+.container{
+  width:100%;
+  max-width:1280px;
+  margin:0 auto;
+  padding:0 24px;
+}
+
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(255,255,255,0.85);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(0,0,0,0.05);
+  z-index:1000;
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:22px 0;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:800;
+  letter-spacing:-1px;
+}
+
+nav{
+  display:flex;
+  gap:34px;
+}
+
+nav a{
+  text-decoration:none;
+  color:rgba(0,0,0,0.65);
+  font-size:15px;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#000;
+}
+
+section{
+  padding:120px 0;
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding-top:120px;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.badge{
+  display:inline-block;
+  background:#f0ebff;
+  color:#6b4dff;
+  padding:10px 18px;
+  border-radius:999px;
+  font-size:14px;
+  margin-bottom:28px;
+}
+
+h1{
+  font-size:76px;
+  line-height:1.02;
+  letter-spacing:-4px;
+  margin-bottom:28px;
+  font-weight:800;
+}
+
+.hero p{
+  font-size:20px;
+  color:rgba(0,0,0,0.6);
+  margin-bottom:40px;
+  max-width:560px;
+}
+
+.buttons{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.btn-primary,
+.btn-secondary{
+  padding:16px 30px;
+  border-radius:999px;
+  text-decoration:none;
+  transition:0.35s ease;
+  font-weight:500;
+}
+
+.btn-primary{
+  background:#111;
+  color:#fff;
+}
+
+.btn-secondary{
+  border:1px solid rgba(0,0,0,0.1);
+  color:#111;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover{
+  transform:translateY(-3px);
+}
+
+.hero-gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.gallery-item{
+  height:320px;
+  border-radius:26px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+  transition:0.35s;
+}
+
+.gallery-item:hover{
+  transform:translateY(-8px);
+}
+
+.gallery-item img,
+.case-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.section-label{
+  color:#6b4dff;
+  text-transform:uppercase;
+  letter-spacing:4px;
+  font-size:13px;
+  margin-bottom:18px;
+}
+
+h2{
+  font-size:58px;
+  line-height:1.1;
+  letter-spacing:-2px;
+  margin-bottom:30px;
+}
+
+.about-grid,
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:80px;
+}
+
+.about-text{
+  font-size:18px;
+  color:rgba(0,0,0,0.65);
+  margin-bottom:40px;
+}
+
+.advantages{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.advantage,
+.service-card,
+.pricing-card,
+.review,
+.faq-item,
+.step,
+.case-card{
+  border:1px solid rgba(0,0,0,0.08);
+  border-radius:30px;
+  background:#fff;
+  transition:0.35s;
+}
+
+.advantage{
+  padding:28px;
+  font-weight:500;
+}
+
+.services,
+.cases,
+.pricing,
+.steps,
+.reviews{
+  display:grid;
+  gap:24px;
+}
+
+.services,
+.cases,
+.pricing{
+  grid-template-columns:repeat(3,1fr);
+}
+
+.reviews{
+  grid-template-columns:repeat(4,1fr);
+}
+
+.steps{
+  grid-template-columns:repeat(4,1fr);
+}
+
+.service-card,
+.pricing-card,
+.review,
+.step{
+  padding:34px;
+}
+
+.case-card{
+  padding:20px;
+}
+
+.service-card:hover,
+.pricing-card:hover,
+.review:hover,
+.step:hover,
+.advantage:hover,
+.case-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.06);
+}
+
+.service-card h3,
+.case-card h3,
+.pricing-card h3{
+  font-size:26px;
+  margin-bottom:18px;
+}
+
+.service-card p,
+.review p,
+.faq-item p,
+.case-card p{
+  color:rgba(0,0,0,0.6);
+}
+
+.service-meta{
+  margin-top:28px;
+  font-size:14px;
+  color:rgba(0,0,0,0.7);
+}
+
+.gray{
+  background:#f7f7f9;
+}
+
+.case-image{
+  height:420px;
+  border-radius:22px;
+  overflow:hidden;
+  margin-bottom:22px;
+}
+
+.featured{
+  background:#111;
+  color:#fff;
+}
+
+.featured p,
+.featured li{
+  color:rgba(255,255,255,0.75);
+}
+
+.price{
+  font-size:54px;
+  margin-bottom:26px;
+  font-weight:700;
+}
+
+.pricing-card ul{
+  list-style:none;
+  margin-bottom:30px;
+}
+
+.pricing-card li{
+  margin-bottom:12px;
+}
+
+.pricing-card button{
+  width:100%;
+  padding:16px;
+  border-radius:999px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.featured button{
+  background:#fff;
+  color:#111;
+}
+
+.pricing-card:not(.featured) button{
+  background:#111;
+  color:#fff;
+}
+
+.step-number{
+  color:#6b4dff;
+  margin-bottom:24px;
+  font-size:14px;
+}
+
+.avatar{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  background:#ece9ff;
+  margin-bottom:18px;
+}
+
+.stars{
+  color:#ffb400;
+  margin-bottom:14px;
+}
+
+.faq{
+  max-width:900px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.faq-item{
+  padding:30px;
+}
+
+.faq-item h4{
+  margin-bottom:14px;
+  font-size:22px;
+}
+
+footer a{
+  display:block;
+  margin-bottom:18px;
+  text-decoration:none;
+  color:rgba(0,0,0,0.75);
+  font-size:20px;
+  transition:0.3s;
+}
+
+footer a:hover{
+  color:#6b4dff;
+}
+
+@media(max-width:1100px){
+
+  .hero-grid,
+  .about-grid,
+  .footer-grid,
+  .services,
+  .cases,
+  .pricing,
+  .steps,
+  .reviews{
+    grid-template-columns:1fr;
+  }
+
+  h1{
+    font-size:54px;
+  }
+
+  h2{
+    font-size:42px;
+  }
+
+  .hero-gallery{
+    margin-top:30px;
+  }
+}
+
+@media(max-width:768px){
+
+  nav{
+    display:none;
+  }
+
+  .advantages{
+    grid-template-columns:1fr;
+  }
+
+  .hero-gallery{
+    grid-template-columns:1fr;
+  }
+
+  h1{
+    font-size:42px;
+    letter-spacing:-2px;
+  }
+
+  h2{
+    font-size:34px;
+  }
+
+  section{
+    padding:90px 0;
+  }
+
+  .gallery-item{
+    height:260px;
+  }
+
+  .case-image{
+    height:360px;
+  }
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
+<div class="container navbar">
 
-  <div class="container navbar">
+<div class="logo">
+INFODESIGN
+</div>
 
-    <div class="logo">
-      INFODESIGN
-    </div>
+<nav>
+<a href="#hero">Главная</a>
+<a href="#services">Услуги</a>
+<a href="#cases">Кейсы</a>
+<a href="#pricing">Стоимость</a>
+<a href="#reviews">Отзывы</a>
+<a href="#contacts">Контакты</a>
+</nav>
 
-    <nav>
-      <a href="#hero">Главная</a>
-      <a href="#services">Услуги</a>
-      <a href="#cases">Кейсы</a>
-      <a href="#pricing">Стоимость</a>
-      <a href="#reviews">Отзывы</a>
-      <a href="#contacts">Контакты</a>
-    </nav>
-
-  </div>
-
+</div>
 </header>
 
 <section class="hero" id="hero">
 
-  <div class="container hero-grid">
+<div class="container hero-grid">
 
-    <div>
+<div>
 
-      <div class="badge">
-        Premium infographic designer
-      </div>
+<div class="badge">
+Premium infographic designer
+</div>
 
-      <h1>
-        Создаю инфографику,<br>
-        которая продаёт
-      </h1>
+<h1>
+Создаю инфографику,<br>
+которая продаёт
+</h1>
 
-      <p>
-        Профессиональный дизайн инфографики
-        для маркетплейсов, бизнеса и соцсетей.
-      </p>
+<p>
+Профессиональный дизайн инфографики для маркетплейсов, бизнеса и соцсетей.
+</p>
 
-      <div class="buttons">
-        <a href="#cases" class="btn-primary">Посмотреть кейсы</a>
-        <a href="#contacts" class="btn-secondary">Связаться</a>
-      </div>
+<div class="buttons">
+<a href="#cases" class="btn-primary">Посмотреть кейсы</a>
+<a href="#contacts" class="btn-secondary">Связаться</a>
+</div>
 
-    </div>
+</div>
 
-    <div class="hero-gallery">
+<div class="hero-gallery">
 
-      <div class="gallery-item">
-        <img src="./case1.jpg" alt="">
-      </div>
+<div class="gallery-item">
+<img src="./case1.jpg" alt="">
+</div>
 
-      <div class="gallery-item">
-        <img src="./case2.jpg" alt="">
-      </div>
+<div class="gallery-item">
+<img src="./case2.jpg" alt="">
+</div>
 
-      <div class="gallery-item">
-        <img src="./case3.jpg" alt="">
-      </div>
+<div class="gallery-item">
+<img src="./case3.jpg" alt="">
+</div>
 
-      <div class="gallery-item">
-        <img src="./case1.jpg" alt="">
-      </div>
+<div class="gallery-item">
+<img src="./case1.jpg" alt="">
+</div>
 
-    </div>
+</div>
 
-  </div>
-
+</div>
 </section>
 
 <section>
 
-  <div class="container about-grid">
+<div class="container about-grid">
 
-    <div>
+<div>
+<div class="section-label">
+Обо мне
+</div>
 
-      <div class="section-label">
-        Обо мне
-      </div>
+<h2>
+Дизайн, который помогает продавать
+</h2>
+</div>
 
-      <h2>
-        Дизайн, который помогает продавать
-      </h2>
+<div>
 
-    </div>
+<p class="about-text">
+Более 4 лет создаю инфографику для маркетплейсов, брендов и digital-проектов.
+Работал с нишами beauty, electronics, fashion, home decor и food.
+</p>
 
-    <div>
+<div class="advantages">
 
-      <p class="about-text">
-        Более 4 лет создаю инфографику для маркетплейсов, брендов и digital-проектов.
-        Работал с нишами beauty, electronics, fashion, home decor и food.
-      </p>
+<div class="advantage">
+Быстрое выполнение
+</div>
 
-      <div class="advantages">
+<div class="advantage">
+Современный дизайн
+</div>
 
-        <div class="advantage">
-          Быстрое выполнение
-        </div>
+<div class="advantage">
+Понимание маркетинга
+</div>
 
-        <div class="advantage">
-          Современный дизайн
-        </div>
+<div class="advantage">
+Работа на результат
+</div>
 
-        <div class="advantage">
-          Понимание маркетинга
-        </div>
-
-        <div class="advantage">
-          Работа на результат
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
+</div>
+</div>
+</div>
 </section>
 
 <section class="gray" id="cases">
 
-  <div class="container">
+<div class="container">
 
-    <div class="section-label">
-      Кейсы
-    </div>
+<div class="section-label">
+Кейсы
+</div>
 
-    <h2>
-      Лучшие проекты
-    </h2>
+<h2>
+Лучшие проекты
+</h2>
 
-    <div class="cases">
+<div class="cases">
 
-      <div class="case-card">
+<div class="case-card">
 
-        <div class="case-image">
-          <img src="./case1.jpg" alt="">
-        </div>
+<div class="case-image">
+<img src="./case1.jpg" alt="">
+</div>
 
-        <h3>Beauty Brand</h3>
+<h3>Beauty Brand</h3>
 
-        <p><strong>Задача:</strong> увеличить CTR карточки товара</p>
+<p><strong>Задача:</strong> увеличить CTR карточки товара</p>
 
-        <p><strong>Результат:</strong> +38% к кликам</p>
+<p><strong>Результат:</strong> +38% к кликам</p>
 
-      </div>
+</div>
 
-      <div class="case-card">
+<div class="case-card">
 
-        <div class="case-image">
-          <img src="./case2.jpg" alt="">
-        </div>
+<div class="case-image">
+<img src="./case2.jpg" alt="">
+</div>
 
-        <h3>Sport Nutrition</h3>
+<h3>Sport Nutrition</h3>
 
-        <p><strong>Задача:</strong> создать premium-визуал</p>
+<p><strong>Задача:</strong> создать premium-визуал</p>
 
-        <p><strong>Результат:</strong> +24% к продажам</p>
+<p><strong>Результат:</strong> +24% к продажам</p>
 
-      </div>
+</div>
 
-      <div class="case-card">
+<div class="case-card">
 
-        <div class="case-image">
-          <img src="./case3.jpg" alt="">
-        </div>
+<div class="case-image">
+<img src="./case3.jpg" alt="">
+</div>
 
-        <h3>Home Decor</h3>
+<h3>Home Decor</h3>
 
-        <p><strong>Задача:</strong> обновить визуал каталога</p>
+<p><strong>Задача:</strong> обновить визуал каталога</p>
 
-        <p><strong>Результат:</strong> рост конверсии</p>
+<p><strong>Результат:</strong> рост конверсии</p>
 
-      </div>
+</div>
 
-    </div>
-
-  </div>
-
+</div>
+</div>
 </section>
 
 <section id="services">
 
-  <div class="container">
+<div class="container">
 
-    <div class="section-label">
-      Услуги
-    </div>
+<div class="section-label">
+Услуги
+</div>
 
-    <h2>
-      Комплексный дизайн для бизнеса
-    </h2>
+<h2>
+Комплексный дизайн для бизнеса
+</h2>
 
-    <div class="services">
+<div class="services">
 
-      <div class="service-card">
+<div class="service-card">
 
-        <h3>Wildberries</h3>
+<h3>Wildberries</h3>
 
-        <p>
-          Инфографика для карточек товаров с фокусом на продажи.
-        </p>
+<p>
+Инфографика для карточек товаров с фокусом на продажи.
+</p>
 
-        <div class="service-meta">
-          Сроки: 2–4 дня<br>
-          Стоимость: от 30€
-        </div>
+<div class="service-meta">
+Сроки: 2–4 дня<br>
+Стоимость: от 30€
+</div>
 
-      </div>
+</div>
 
-      <div class="service-card">
+<div class="service-card">
 
-        <h3>Ozon</h3>
+<h3>Ozon</h3>
 
-        <p>
-          Современное оформление карточек для маркетплейсов.
-        </p>
+<p>
+Современное оформление карточек для маркетплейсов.
+</p>
 
-        <div class="service-meta">
-          Сроки: 2–5 дней<br>
-          Стоимость: от 40€
-        </div>
+<div class="service-meta">
+Сроки: 2–5 дней<br>
+Стоимость: от 40€
+</div>
 
-      </div>
+</div>
 
-      <div class="service-card">
+<div class="service-card">
 
-        <h3>Баннеры</h3>
+<h3>Баннеры</h3>
 
-        <p>
-          Продающие баннеры для рекламы и digital-кампаний.
-        </p>
+<p>
+Продающие баннеры для рекламы и digital-кампаний.
+</p>
 
-        <div class="service-meta">
-          Сроки: 1–3 дня<br>
-          Стоимость: от 25€
-        </div>
+<div class="service-meta">
+Сроки: 1–3 дня<br>
+Стоимость: от 25€
+</div>
 
-      </div>
+</div>
 
-    </div>
-
-  </div>
-
+</div>
+</div>
 </section>
 
 <section class="gray" id="pricing">
 
-  <div class="container">
+<div class="container">
 
-    <div class="section-label">
-      Стоимость
-    </div>
+<div class="section-label">
+Стоимость
+</div>
 
-    <h2>
-      Прозрачные тарифы
-    </h2>
+<h2>
+Прозрачные тарифы
+</h2>
 
-  </div>
+<div class="pricing">
 
+<div class="pricing-card">
+
+<h3>Базовый</h3>
+
+<div class="price">30€</div>
+
+<ul>
+<li>1 дизайн</li>
+<li>Базовая инфографика</li>
+<li>1–2 правки</li>
+</ul>
+
+<button>Выбрать</button>
+
+</div>
+
+<div class="pricing-card featured">
+
+<h3>Стандарт</h3>
+
+<div class="price">70€</div>
+
+<ul>
+<li>До 5 слайдов</li>
+<li>Premium визуал</li>
+<li>Маркетинговая подача</li>
+</ul>
+
+<button>Выбрать</button>
+
+</div>
+
+<div class="pricing-card">
+
+<h3>Premium</h3>
+
+<div class="price">150€</div>
+
+<ul>
+<li>Полный проект</li>
+<li>Максимальная проработка</li>
+<li>Приоритетная работа</li>
+</ul>
+
+<button>Выбрать</button>
+
+</div>
+
+</div>
+
+<p style="margin-top:32px;color:rgba(0,0,0,0.5)">
+Точная стоимость зависит от объёма и сложности проекта.
+</p>
+
+</div>
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-label">
+Процесс
+</div>
+
+<h2>
+Как проходит работа
+</h2>
+
+<div class="steps">
+
+<div class="step">
+<div class="step-number">01</div>
+<h3>Обсуждение</h3>
+</div>
+
+<div class="step">
+<div class="step-number">02</div>
+<h3>Анализ</h3>
+</div>
+
+<div class="step">
+<div class="step-number">03</div>
+<h3>Дизайн</h3>
+</div>
+
+<div class="step">
+<div class="step-number">04</div>
+<h3>Готовый результат</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="gray" id="reviews">
+
+<div class="container">
+
+<div class="section-label">
+Отзывы
+</div>
+
+<h2>
+Что говорят клиенты
+</h2>
+
+<div class="reviews">
+
+<div class="review">
+<div class="avatar"></div>
+<div class="stars">★★★★★</div>
+
+<p>
+Очень сильный визуал и понимание маркетинга.
+Карточки стали выглядеть намного дороже.
+</p>
+</div>
+
+<div class="review">
+<div class="avatar"></div>
+<div class="stars">★★★★★</div>
+
+<p>
+Работа выполнена быстро и профессионально.
+Конверсия реально выросла.
+</p>
+</div>
+
+<div class="review">
+<div class="avatar"></div>
+<div class="stars">★★★★★</div>
+
+<p>
+Современный стиль и внимание к деталям.
+Отличный результат.
+</p>
+</div>
+
+<div class="review">
+<div class="avatar"></div>
+<div class="stars">★★★★★</div>
+
+<p>
+Получили именно тот premium-визуал,
+который нужен бренду.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-label" style="text-align:center">
+FAQ
+</div>
+
+<h2 style="text-align:center">
+Частые вопросы
+</h2>
+
+<div class="faq">
+
+<div class="faq-item">
+
+<h4>
+Какие сроки выполнения?
+</h4>
+
+<p>
+Средний срок выполнения — от 1 до 7 дней.
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h4>
+Сколько правок включено?
+</h4>
+
+<p>
+Обычно включено 2–3 раунда правок.
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h4>
+Какие форматы файлов вы предоставляете?
+</h4>
+
+<p>
+PNG, JPG, PDF, Figma и другие форматы по запросу.
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h4>
+Как проходит оплата?
+</h4>
+
+<p>
+Предоплата 50%, остаток после утверждения проекта.
+</p>
+
+</div>
+
+</div>
+</div>
 </section>
 
 <footer id="contacts">
 
-  <div class="container footer-grid">
+<div class="container footer-grid">
 
-    <div>
+<div>
 
-      <div class="section-label">
-        Контакты
-      </div>
+<div class="section-label">
+Контакты
+</div>
 
-      <h2>
-        Готов обсудить ваш проект
-      </h2>
+<h2>
+Готов обсудить ваш проект
+</h2>
 
-    </div>
+<p class="about-text">
+Напишите мне удобным способом —
+помогу подобрать формат работы
+и рассчитать стоимость.
+</p>
 
-    <div>
+</div>
 
-      <a href="#">Telegram</a>
-      <a href="#">WhatsApp</a>
-      <a href="#">Email</a>
-      <a href="#">Behance</a>
+<div>
 
-    </div>
+<a href="#">Telegram</a>
+<a href="#">WhatsApp</a>
+<a href="#">Email</a>
+<a href="#">Behance</a>
 
-  </div>
+</div>
 
+</div>
 </footer>
 
 </body>

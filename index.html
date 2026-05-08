@@ -12,6 +12,71 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+.pricing-benefits{
+  display:flex;
+  gap:12px;
+  margin-top:20px;
+  flex-wrap:wrap;
+}
+
+.pricing-benefit{
+  background:#fff;
+  border:1px solid rgba(0,0,0,0.06);
+
+  border-radius:999px;
+
+  padding:12px 18px;
+
+  font-size:14px;
+  font-weight:600;
+
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.step{
+  padding:34px;
+  border-radius:32px;
+  background:#fff;
+  border:1px solid rgba(0,0,0,0.06);
+}
+
+.step-icon{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  background:#f3edff;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-bottom:22px;
+}
+
+.step-icon img{
+  width:24px;
+  height:24px;
+}
+
+.step-number{
+  font-size:18px;
+  color:rgba(108,77,255,0.55);
+  font-weight:700;
+  margin-bottom:14px;
+}
+
+.step h3{
+  font-size:24px;
+  margin-bottom:14px;
+  line-height:1.2;
+}
+
+.step p{
+  font-size:16px;
+  line-height:1.5;
+  color:rgba(0,0,0,0.58);
+}
 .review-name{
   font-size:15px;
   font-weight:600;
@@ -41,7 +106,7 @@ flex-direction:column;
 .card-icon{
 margin-bottom:0;
 }
-
+ 
 .pricing-title{
 font-size:42px;
 line-height:1.05;
@@ -197,11 +262,7 @@ html{
 
 body{
   font-family:'Inter',sans-serif;
-  background:url('./background.jpg');
-  background-size:100% auto;
-  background-position:center top;
-  background-attachment:scroll;
-  background-repeat:no-repeat;
+  background:#ffffff;
   color:#111;
   line-height:1.6;
 }
@@ -305,7 +366,39 @@ h1{
   gap:18px;
   flex-wrap:wrap;
 }
+ .hero-stats{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:42px;
+  max-width:620px;
+}
 
+.hero-stat{
+  font-size:15px;
+  color:rgba(0,0,0,0.72);
+  line-height:1.2;
+  white-space:nowrap;
+}
+
+.hero-stat:last-child{
+  white-space:normal;
+}
+
+.hero-stat span{
+  color:#6b4dff;
+  font-weight:700;
+}
+
+.hero-dot{
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background:#6b4dff;
+  opacity:0.45;
+  flex-shrink:0;
+}
 .btn-primary,
 .btn-secondary{
   padding:16px 30px;
@@ -474,7 +567,7 @@ h2{
 }
 
 .gray{
-  background:transparent;
+  background:#f7f7f9;
 }
 
 .case-image{
@@ -684,10 +777,18 @@ align-items:flex-end;
   display:flex;
   align-items:center;
   gap:14px;
-
   min-height:90px;
+  line-height:1.4;
+}
+.pricing-bottom-info{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
 }
 
+.pricing-bottom-info .info-box{
+  white-space:nowrap;
+}
 .step-number{
   color:#6b4dff;
   margin-bottom:24px;
@@ -875,8 +976,30 @@ Premium infographic designer
 <a href="#contacts" class="btn-secondary">Связаться</a>
 </div>
 
+<div class="hero-stats">
+
+  <div class="hero-stat">
+    <span>4+</span>
+    лет опыта
+  </div>
+
+  <div class="hero-dot"></div>
+
+  <div class="hero-stat">
+    <span>500+</span>
+    карточек
+  </div>
+
+  <div class="hero-dot"></div>
+
+  <div class="hero-stat">
+    <span>WB / Ozon  / Яндекс </span>
+  </div>
+
 </div>
 
+</div>
+ 
 <div class="hero-gallery">
 
 <div class="gallery-item">
@@ -1269,15 +1392,15 @@ Premium infographic designer
 
 </div>
 
-<div class="pricing-bottom-info">
+<div class="pricing-benefits">
 
-<div class="info-box">
-🎁 Скидка 10% при заказе от 10 слайдов
-</div>
+  <div class="pricing-benefit">
+    🎁 Скидка 10% от 10 слайдов
+  </div>
 
-<div class="info-box">
-🔰 Гарантия качества и результата, который продаёт
-</div>
+  <div class="pricing-benefit">
+    🔰 Гарантия качества
+  </div>
 
 </div>
 
@@ -1299,25 +1422,82 @@ Premium infographic designer
 <div class="steps">
 
 <div class="step">
-<div class="step-number">01</div>
-<h3>Обсуждение</h3>
+
+  <div class="step-icon">
+    <img src="./icons/search.svg" alt="">
+  </div>
+
+  <div class="step-number">
+    01
+  </div>
+
+  <h3>
+    Бриф и анализ
+  </h3>
+
+  <p>
+    Изучаю товар, нишу, конкурентов и задачи.
+  </p>
+
 </div>
 
 <div class="step">
-<div class="step-number">02</div>
-<h3>Анализ</h3>
+
+  <div class="step-icon">
+    <img src="./icons/pencil.svg" alt="">
+  </div>
+
+  <div class="step-number">
+    02
+  </div>
+
+  <h3>
+    Концепция и дизайн
+  </h3>
+
+  <p>
+    Создаю продающую концепцию и визуал.
+  </p>
+
 </div>
 
 <div class="step">
-<div class="step-number">03</div>
-<h3>Дизайн</h3>
+
+  <div class="step-icon">
+    <img src="./icons/vote.svg" alt="">
+  </div>
+
+  <div class="step-number">
+    03
+  </div>
+
+  <h3>
+    Правки
+  </h3>
+
+  <p>
+    Вносим правки до идеального результата.
+  </p>
+
 </div>
 
 <div class="step">
-<div class="step-number">04</div>
-<h3>Готовый результат</h3>
-</div>
 
+  <div class="step-icon">
+    <img src="./icons/download.svg" alt="">
+  </div>
+
+  <div class="step-number">
+    04
+  </div>
+
+  <h3>
+    Готовые файлы
+  </h3>
+
+  <p>
+    Вы получаете готовые файлы и исходники.
+  </p>
 </div>
 </div>
 </section>

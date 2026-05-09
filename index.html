@@ -421,13 +421,13 @@ html{
 
 body{
   font-family:'Inter',sans-serif;
+  color:#111;
+  line-height:1.6;
 
-  background-image:
-    linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.88)),
-    url('./background.jpg');
-
+  background-image:url('./bg.jpg');
   background-size:cover;
   background-position:center;
+  background-repeat:no-repeat;
   background-attachment:fixed;
 }
 
@@ -640,7 +640,10 @@ h2{
 .case-card{
   border:1px solid rgba(0,0,0,0.08);
   border-radius:30px;
-  background:#fff;
+
+  background:rgba(255,255,255,0.72);
+  backdrop-filter:blur(12px);
+
   transition:0.35s;
 }
 .services,
@@ -723,7 +726,7 @@ h2{
 }
 
 .gray{
-  background:#f7f7f9;
+  background:transparent;
 }
 
 .case-image{
@@ -756,7 +759,8 @@ h2{
 }
 
 .pricing-card{
-  background:#fff;
+  background:rgba(255,255,255,0.75);
+backdrop-filter:blur(12px);
   border:1px solid rgba(0,0,0,0.06);
   border-radius:36px;
   padding:32px;
@@ -1144,11 +1148,13 @@ footer a:hover{
   line-height:1.5;
   color:rgba(0,0,0,0.55);
 }
-.about-section{
- background-image:url('./background.jpg');
+.about-section,
+#cases{
+  background-image:url('./bg.jpg');
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
+  background-attachment:fixed;
 }
 </style>
 </head>

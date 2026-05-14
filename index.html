@@ -428,14 +428,23 @@ body{
   color:#111;
   line-height:1.6;
 
-  background-image:url('bg.webp');
-  background-size:cover;
-  background-position:top center;
-  background-repeat:no-repeat;
-
+  position:relative;
   overflow-x:hidden;
+  background:#fff;
 }
+.bg-image{
+  position:absolute;
+  top:0;
+  left:0;
 
+  width:100%;
+  height:auto;
+
+  z-index:-1;
+
+  pointer-events:none;
+  user-select:none;
+}
 img{
   width:100%;
   display:block;
@@ -1160,7 +1169,7 @@ backdrop-filter:blur(12px);
 
 
 <body>
-
+<img src="bg.webp" class="bg-image" alt="">
 <header>
 <div class="container navbar">
 

@@ -427,17 +427,22 @@ body{
   font-family:'Inter',sans-serif;
   color:#111;
   line-height:1.6;
+  background:#fff;
+  overflow-x:hidden;
+}
 
-  background-image:url('bg.webp');
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+
+  background:url('bg.webp') center center / cover no-repeat;
+
+  z-index:-1;
+
+  will-change:transform;
 }
-@media(min-width:1024px){
-  body{
-    background-attachment:fixed;
-  }
-}
+
 img{
   width:100%;
   display:block;

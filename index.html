@@ -12,6 +12,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
+.contacts-btn{
+  border:none;
+  cursor:pointer;
+}
 .about-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -1960,9 +1965,9 @@ PNG, JPG, PDF, Figma и другие форматы по запросу.
           формат работы и рассчитать стоимость проекта.
         </p>
 
-        <a href="#" class="contacts-btn">
+        <button class="contacts-btn" id="openModal">
           Написать мне →
-        </a>
+        </button>
 
       </div>
 
@@ -2057,5 +2062,124 @@ PNG, JPG, PDF, Figma и другие форматы по запросу.
   </div>
 
 </section>
+<!-- Модальное окно -->
+<div class="modal" id="contactModal">
+
+  <div class="modal-content">
+
+    <button class="modal-close" id="closeModal">✕</button>
+
+    <h3>Обсудим ваш проект</h3>
+
+    <form action="https://formspree.io/f/xjgznnze" method="POST">
+<input
+  type="hidden"
+  name="_subject"
+  value="Новая заявка с сайта Lidman Design"
+>
+      <input
+        type="text"
+        name="name"
+        placeholder="Ваше имя"
+        required
+      >
+
+      <input
+        type="text"
+        name="contact"
+        placeholder="Телефон или Telegram"
+        required
+      >
+
+      <textarea
+        name="message"
+        placeholder="Расскажите о проекте"
+        rows="5"
+      ></textarea>
+
+      <button type="submit" class="modal-submit">
+        Отправить заявку
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+<style>
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.5);
+  z-index:9999;
+  justify-content:center;
+  align-items:center;
+}
+
+.modal.active{
+  display:flex;
+}
+
+.modal-content{
+  width:90%;
+  max-width:600px;
+  background:#fff;
+  border-radius:32px;
+  padding:40px;
+  position:relative;
+}
+
+.modal-content form{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.modal-content input,
+.modal-content textarea{
+  padding:16px;
+  border:1px solid #ddd;
+  border-radius:14px;
+}
+
+.modal-submit{
+  border:none;
+  border-radius:999px;
+  padding:18px;
+  background:#7b61ff;
+  color:#fff;
+  cursor:pointer;
+}
+
+.modal-close{
+  position:absolute;
+  right:20px;
+  top:15px;
+  border:none;
+  background:none;
+  font-size:24px;
+  cursor:pointer;
+}
+</style>
+
+<script>
+const modal = document.getElementById('contactModal');
+
+document.getElementById('openModal').addEventListener('click', () => {
+  modal.classList.add('active');
+});
+
+document.getElementById('closeModal').addEventListener('click', () => {
+  modal.classList.remove('active');
+});
+
+modal.addEventListener('click', (e) => {
+  if(e.target === modal){
+    modal.classList.remove('active');
+  }
+});
+</script>
 </body>
 </html>

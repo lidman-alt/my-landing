@@ -1245,6 +1245,143 @@ backdrop-filter:blur(12px);
   }
 
 }
+@media(max-width:768px){
+
+  /* Убираем второстепенные блоки */
+
+  .about-section,
+  #services,
+  #reviews,
+  .faq,
+  .steps{
+    display:none;
+  }
+
+  /* Первый экран */
+
+  .hero{
+    min-height:auto;
+    padding-top:90px;
+    padding-bottom:40px;
+  }
+
+  h1{
+    font-size:36px;
+    line-height:1.05;
+    letter-spacing:-1px;
+    margin-bottom:20px;
+  }
+
+  .hero p{
+    font-size:18px;
+    margin-bottom:28px;
+  }
+
+  /* Кнопки */
+
+  .buttons{
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .btn-primary,
+  .btn-secondary{
+    width:100%;
+    text-align:center;
+    justify-content:center;
+  }
+
+  /* Статистика */
+
+  .hero-stats{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+    margin-top:24px;
+  }
+
+  .hero-dot{
+    display:none;
+  }
+
+  /* Только 2 лучшие работы */
+
+  .hero-gallery .gallery-item:nth-child(3),
+  .hero-gallery .gallery-item:nth-child(4){
+    display:none;
+  }
+
+  .hero-gallery{
+    gap:12px;
+    margin-top:30px;
+  }
+
+  .gallery-item{
+    height:220px;
+  }
+
+  /* Кейсы */
+
+  .case-card{
+    padding:14px;
+  }
+
+  .case-image{
+    height:240px;
+    margin-bottom:14px;
+  }
+
+  .case-card h3{
+    font-size:22px;
+  }
+
+  /* Отступы */
+
+  section{
+    padding:50px 0;
+  }
+
+  h2,
+  .pricing-title{
+    font-size:32px;
+    line-height:1.1;
+  }
+
+  /* Тарифы */
+
+  .pricing-card{
+    padding:24px;
+  }
+
+  .pricing-card h3{
+    font-size:28px;
+  }
+
+  .price{
+    font-size:42px;
+  }
+
+  /* Контакты */
+
+  .contacts-box{
+    padding:24px;
+  }
+
+  .contacts-grid{
+    grid-template-columns:1fr;
+  }
+
+  /* Шапка */
+
+  .navbar{
+    padding:14px 0;
+  }
+
+  .logo{
+    font-size:18px;
+  }
+
+}
 </style>
 </head>
 

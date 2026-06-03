@@ -1169,6 +1169,82 @@ backdrop-filter:blur(12px);
   line-height:1.5;
   color:rgba(0,0,0,0.55);
 }
+@media (max-width: 768px) {
+
+  /* Упрощаем первый экран */
+
+  .hero{
+    min-height:auto;
+    padding-top:100px;
+  }
+
+  h1{
+    font-size:36px;
+    line-height:1.05;
+    letter-spacing:-1px;
+  }
+
+  .hero p{
+    font-size:18px;
+  }
+
+  /* Показываем только 2 лучшие работы */
+
+  .hero-gallery .gallery-item:nth-child(3),
+  .hero-gallery .gallery-item:nth-child(4){
+    display:none;
+  }
+
+  /* Убираем фото в блоке обо мне */
+
+  .about-image{
+    display:none;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  /* Уменьшаем отступы */
+
+  section{
+    padding:60px 0;
+  }
+
+  /* Убираем линию процесса */
+
+  .steps::before{
+    display:none;
+  }
+
+  /* Кейсы компактнее */
+
+  .case-image{
+    height:auto;
+  }
+
+  /* Контакты 2×2 вместо длинной колонки */
+
+  .contacts-grid{
+    grid-template-columns:repeat(2,1fr) !important;
+  }
+
+  .contact-name{
+    font-size:18px;
+  }
+
+  .contact-subtitle{
+    font-size:13px;
+  }
+
+  /* Логотип меньше */
+
+  .logo{
+    font-size:18px;
+  }
+
+}
 </style>
 </head>
 
